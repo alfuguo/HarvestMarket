@@ -1,4 +1,7 @@
 package com.alfufinal.harvestmarket.security.domain;
+import com.alfufinal.harvestmarket.dto.UserDto;
+import io.jsonwebtoken.Claims;
+import org.springframework.security.core.GrantedAuthority;
 
 import lombok.Builder;
 import lombok.Getter;
