@@ -11,7 +11,6 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.web.SecurityFilterChain;
 
 import static org.springframework.security.config.Customizer.withDefaults;
-
 @Configuration
 @EnableWebSecurity
 public class SecurityConfig {
@@ -39,9 +38,10 @@ public class SecurityConfig {
 
     @Bean
     public RoleHierarchy roleHierarchy() {
-        RoleHierarchyImpl roleHierarchy = new RoleHierarchyImpl();
-        roleHierarchy.setHierarchy("ROLE_ADMIN > ROLE_MARKET_ADMIN > ROLE_VENDOR > ROLE_USER");
-        return roleHierarchy;
+        String hierarchy = "ROLE_ADMIN > ROLE_MARKET_ADMIN\n" +
+                           "ROLE_MARKET_ADMIN > ROLE_VENDOR\n" +
+                           "ROLE_VENDOR > ROLE_USER";
+        return RoleHierarchyImpl.fromHierarchy(hierarchy);
     }
 
 }
