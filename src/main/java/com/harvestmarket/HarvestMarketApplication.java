@@ -1,4 +1,4 @@
-package com.alfufinal.harvestmarket;
+package com.harvestmarket;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
