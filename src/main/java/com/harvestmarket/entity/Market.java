@@ -14,6 +14,8 @@ public class Market {
     private Long id;
     private String name;
     private String location;
+    private User marketAdmin;
+    private List<MarketNews> news;
 
     @OneToMany(mappedBy = "market")
     private List<Vendor> vendors;

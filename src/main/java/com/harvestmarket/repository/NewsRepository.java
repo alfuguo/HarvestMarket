@@ -1,9 +1,10 @@
 package com.harvestmarket.repository;
 
-import com.harvestmarket.entity.User;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
+import com.harvestmarket.entity.News;
+
 @Repository
-public interface UserRepository extends JpaRepository<User, Long> {
+public interface NewsRepository extends JpaRepository<News, Long> {
 }

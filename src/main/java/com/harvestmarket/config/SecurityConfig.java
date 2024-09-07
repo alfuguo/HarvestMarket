@@ -20,10 +20,10 @@ public class SecurityConfig {
         http
                 .csrf(csrf -> csrf.disable())
                 .authorizeHttpRequests(auth -> auth
-                        .requestMatchers("/admin/**").hasRole("ADMIN")
-                        .requestMatchers("/market/**").hasRole("MARKET_ADMIN")
-                        .requestMatchers("/vendor/**").hasRole("VENDOR")
-                        .requestMatchers("/user/**").hasRole("USER")
+                        .requestMatchers("/api/admin/**").hasRole("ROLE_ADMIN")
+                        .requestMatchers("/api/market-admin/**").hasRole("ROLE_MARKET_ADMIN")
+                        .requestMatchers("/api/vendor/**").hasRole("ROLE_VENDOR")
+                        .requestMatchers("/api/user/**").hasRole("ROLE_USER")
                         .anyRequest().authenticated()
                 )
                 .formLogin(withDefaults())
