@@ -1,7 +1,7 @@
 package com.harvestmarket.entity;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;   
+
 import lombok.*;
 
 @Getter
