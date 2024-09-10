@@ -1,7 +1,6 @@
 package com.harvestmarket.entity;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 import lombok.*;
 
 @Getter
@@ -11,5 +10,7 @@ import lombok.*;
 @Entity
 @Table(name = "market_news")
 public class MarketNews extends News {
-    private Market market;
+    @ManyToOne
+    @JoinColumn(name = "market_admin_id")
+    private MarketAdmin marketAdmin;
 }
